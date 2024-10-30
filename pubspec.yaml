@@ -1,0 +1,26 @@
+name: desktop_entry
+description: "A  Flutter project to create desktop entry in debian linux."
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ^3.5.4
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  image_picker:
+  file_picker:
+  isar:
+  isar_flutter_libs:
+  path_provider:
+  flutter_riverpod:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner:
+  isar_generator:
+  flutter_lints:
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
