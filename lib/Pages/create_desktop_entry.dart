@@ -34,7 +34,12 @@ class _CreateNewEntryPageState extends ConsumerState<CreateNewEntryPage> {
         Comment=$name
         Terminal=false
         ''';
-      final homeDirectory = Directory.current.parent.parent.path;
+      final homeDirectory = Platform.environment['HOME'];
+      if (homeDirectory == null) {
+        throw Exception('Could not locate the user home directory.');
+      }
+
+     // final homeDirectory = Directory.current.parent.parent.path;
       File('$homeDirectory/.local/share/applications/$name.desktop')
           .writeAsStringSync(entry);
       final newDesktopEntry = DesktopEntryModel()
